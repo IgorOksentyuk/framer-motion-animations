@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Provider from "./provider";
 
 export const metadata: Metadata = {
   title: "Animations",
@@ -13,7 +14,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Provider>
+          {children}
+        </Provider>
+      </body>
     </html>
   );
 }
